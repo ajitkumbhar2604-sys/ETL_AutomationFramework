@@ -41,9 +41,19 @@ def check_count(source,target):
         print("Records present in Target but missing in Source: ")
         print(extra_records)
 
+#column count matching/mismatching
+def check_column_count(source, target):
+    if source.shape[1] == target.shape[1]:
+        print("PASS : Column count is matching")
+    else:
+        print("FAIL : Column count mismatch")
+        print("Source:", source.shape[1])
+        print("Target:", target.shape[1])
+
 
 #Call the fucntions from here
 source = read_file(r"C:\Users\Admin\PycharmProjects\etlAutomationTestingUsingPython\Input_Files\customers_records_S.csv", "csv")
 target = read_file(r"C:\Users\Admin\PycharmProjects\etlAutomationTestingUsingPython\Input_Files\customers_records_T.csv", file_type="csv")
 
 check_count(source,target)
+check_column_count(source, target)
