@@ -50,10 +50,32 @@ def check_column_count(source, target):
         print("Source:", source.shape[1])
         print("Target:", target.shape[1])
 
+#unction to check duplicates in target
+def check_duplicates(target_df, pkey):
+    unique_target_df = target_df.drop_duplicates(subset=pkey).shape[0]
+    original_count_df = target_df.shape[0]
+    duplicate_count = original_count_df - unique_target_df
+    duplicate_df = target_df[target_df.duplicated(subset=pkey, keep=False)]
+    if duplicate_count == 0:
+        print("No Duplicate records present in Target")
+    else:
+        print("Duplicate records present in Target")
+        print("FAIL : Duplicate Records Found")
+        print(f"Duplicate Count : {duplicate_count}")
 
-#Call the fucntions from here
+        #duplicate_df = target_df[target_df.duplicated(subset=pkey, keep=False)]
+
+        print("\nDuplicate Records:")
+        print(duplicate_df)
+    return duplicate_count, duplicate_df
+
+#Call the functions from here
 source = read_file(r"C:\Users\Admin\PycharmProjects\etlAutomationTestingUsingPython\Input_Files\customers_records_S.csv", "csv")
-target = read_file(r"C:\Users\Admin\PycharmProjects\etlAutomationTestingUsingPython\Input_Files\customers_records_T.csv", file_type="csv")
+#target = read_file(r"C:\Users\Admin\PycharmProjects\etlAutomationTestingUsingPython\Input_Files\customers_records_T.csv", file_type="csv")
+target_duplicate_df = read_file(r"C:\Users\Admin\PycharmProjects\etlAutomationTestingUsingPython\Input_Files\customers_records_T_with_DuplicateRec.csv", file_type="csv")
 
-check_count(source,target)
-check_column_count(source, target)
+#check_count(source,target)
+#check_column_count(source, target)
+check_duplicates(target_duplicate_df, 'customer_id')
+# source_count = len(source)
+# print(source_count)
