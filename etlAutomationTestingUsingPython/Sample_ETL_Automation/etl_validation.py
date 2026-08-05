@@ -11,7 +11,7 @@ from pip._internal.models import target_python
 #target_path = "C:\Users\Admin\PycharmProjects\etlAutomationTestingUsingPython\Input_Files\customers_records_T.csv"
 
 #Sample ETL validation
-def read_file(file_path, file_type):
+def read_data(file_path, file_type):
     file_type = file_type.lower()
     if file_type == "csv":
         df = pd.read_csv(file_path)
@@ -124,10 +124,10 @@ def check_out_of_range(target_df, column, min_val, max_val):
 
 
 #Call the functions from here
-source = read_file(r"C:\Users\Admin\PycharmProjects\etlAutomationTestingUsingPython\Input_Files\customers_records_S.csv", "csv")
+#source = read_data(r"C:\Users\Admin\PycharmProjects\etlAutomationTestingUsingPython\Input_Files\customers_records_S.csv", "csv")
 #target = read_file(r"C:\Users\Admin\PycharmProjects\etlAutomationTestingUsingPython\Input_Files\customers_records_S.csv", file_type="csv")
-target_duplicate_df = read_file(r"C:\Users\Admin\PycharmProjects\etlAutomationTestingUsingPython\Input_Files\customers_records_T_with_DuplicateRec.csv", file_type="csv")
-target_range = read_file(r"C:\Users\Admin\PycharmProjects\etlAutomationTestingUsingPython\Input_Files\customers_records_S.csv", file_type="csv")
+#target_duplicate_df = read_data(r"C:\Users\Admin\PycharmProjects\etlAutomationTestingUsingPython\Input_Files\customers_records_T_with_DuplicateRec.csv", file_type="csv")
+#target_range = read_data(r"C:\Users\Admin\PycharmProjects\etlAutomationTestingUsingPython\Input_Files\customers_records_S.csv", file_type="csv")
 
 #check_count(source,target)
 #check_column_count(source, target)
@@ -135,6 +135,6 @@ target_range = read_file(r"C:\Users\Admin\PycharmProjects\etlAutomationTestingUs
 #check_null(target_duplicate_df, 'customer_id')
 #data_compare(source, target) #used same source file as target file, for exact comaprision
 #data_compare_sql(source, target) # using SQLdf
-check_out_of_range(target_range, 'age', 21, 59)
+#check_out_of_range(target_range, 'age', 21, 59)
 # source_count = len(source)
 # print(source_count)
