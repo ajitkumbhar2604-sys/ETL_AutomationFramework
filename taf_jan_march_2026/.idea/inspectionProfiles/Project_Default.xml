@@ -1,0 +1,30 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="colorama" />
+          <option value="greenlet" />
+          <option value="iniconfig" />
+          <option value="numpy" />
+          <option value="packaging" />
+          <option value="pandas" />
+          <option value="pandas-stubs" />
+          <option value="pandasql" />
+          <option value="pluggy" />
+          <option value="py4j" />
+          <option value="pyarrow" />
+          <option value="Pygments" />
+          <option value="pyspark" />
+          <option value="pytest" />
+          <option value="python-dateutil" />
+          <option value="six" />
+          <option value="SQLAlchemy" />
+          <option value="typing_extensions" />
+          <option value="tzdata" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
